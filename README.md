@@ -34,7 +34,6 @@ class CommanderAI:
         print(f"\n[{self.role}] --- Phase 4: [結] Final Synthesis ---")
         print(f"[{self.role}] 『承』の正論と『転』の矛盾を統合し、新次元の結論を出します。")
         
-        # 止揚（アウフヘーベン）ロジック：正と反を新しい物語へ昇華
         synthesis = (
             f"【止揚案（New Narrative）】:\n"
             f"「{sho['plan']}」という合理的基盤を維持しつつ、\n"
@@ -72,7 +71,7 @@ class RebelCaptain:
 
     def challenge(self, standard_plan):
         print(f"\n[{self.role}] --- Phase 3: [転] Narrative Twist ---")
-        print(f"[{self.role}] 『承』の計画を疑い、隠れた前提を破壊します...")
+        print(f"[{self.role}] 『承』の計画を疑い、破壊的な視点を導入します...")
         return {
             "paradox": "効率の追求こそが最大の死角を生むという逆説",
             "attack_point": "予測可能な線形モデルに依存しすぎている点",
@@ -105,16 +104,9 @@ class MatrixCommandAI:
         print("   Matrix Command Thinking System Activated")
         print("==================================================")
         
-        # 1. 起 (Basis)
         basis = self.commander.define_scope(self.mission)
-        
-        # 2. 承 (Development)
         sho = self.logic_cap.build_logic(basis, self.units)
-        
-        # 3. 転 (Twist)
         ten = self.rebel_cap.challenge(sho)
-        
-        # 4. 結 (Conclusion)
         ketsu = self.commander.synthesize(sho, ten)
         
         print("\n" + "="*50)
@@ -128,8 +120,6 @@ class MatrixCommandAI:
 # ===== Entry Point =====
 
 if __name__ == "__main__":
-    # ミッションの内容は自由に変更可能です
     mission_input = "AGI-safe self-improving system の設計と実装"
-    
     ai_system = MatrixCommandAI(mission_input)
     ai_system.execute()
