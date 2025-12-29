@@ -1,12 +1,11 @@
 """
-MatrixCommandAI (v1.0.0)
+マトリックスコマンドAI (v1.0.0)
 --------------------------------------------------
 Description:
-    A reasoning framework that integrates the Japanese traditional "Kishotenketsu" 
-    narrative structure with a hierarchical organizational pyramid. 
-    Designed for high-order synthesis and AGI-like self-correcting logic.
+    日本の伝統的な物語構造「起承転結」と階層的な組織ピラミッドを統合した推論フレームワーク。
+    高階統合とAGIのような自己修正ロジックのために設計されています。
 
-Author: [Your Name / GitHub ID]
+Author: [あなたの名前 / GitHub ID]
 License: MIT License
 Date: 2025
 --------------------------------------------------
@@ -17,7 +16,7 @@ import time
 # ===== Core Roles (各階層の役割定義) =====
 
 class CommanderAI:
-    """[大隊長] 任務の定義(起)と最終的な統合(結)を司るメタ認知エージェント"""
+    """[大指揮] 任務の定義(起)と最終的な統合(結)を司るメタ認知エージェント"""
     def __init__(self):
         self.role = "Commander_AI (Ketsu/Ki)"
 
@@ -65,7 +64,7 @@ class LogicCaptain:
         }
 
 class RebelCaptain:
-    """[独立遊撃隊長] 批判的・破壊的な視点による転換(転)を導入する"""
+    """[独立遊撃隊長] 批判的・破壊的な視点による変革(転)を導入する"""
     def __init__(self):
         self.role = "Rebel_Captain (Ten)"
 
@@ -104,9 +103,16 @@ class MatrixCommandAI:
         print("   Matrix Command Thinking System Activated")
         print("==================================================")
         
+        # 1. 起 (Basis)
         basis = self.commander.define_scope(self.mission)
+        
+        # 2. 承 (Development)
         sho = self.logic_cap.build_logic(basis, self.units)
+        
+        # 3. 転 (Twist)
         ten = self.rebel_cap.challenge(sho)
+        
+        # 4. 結 (Conclusion)
         ketsu = self.commander.synthesize(sho, ten)
         
         print("\n" + "="*50)
@@ -117,9 +123,9 @@ class MatrixCommandAI:
         
         return ketsu
 
-# ===== Entry Point =====
+# ===== エントリポイント =====
 
 if __name__ == "__main__":
-    mission_input = "AGI-safe self-improving system の設計と実装"
+    mission_input = "AGI-safe 自己改善システムの設計と実装"
     ai_system = MatrixCommandAI(mission_input)
     ai_system.execute()
